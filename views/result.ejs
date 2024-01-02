@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/result.css">
+  <title></title>
+  <script>
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+    const token2 = getCookie('cookie2');
+    if(!token2){
+        window.location.href='/student-login';
+    }
+</script>
+</head>
+<body>
+  
+  <header>
+    <h2>Result Management System</h2>
+</header>
+<a class="a" style="display: inline-block;" href="/log">Logout</a>
+<div>
+  <h2 class="h2">Result's of This Academic Year</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Student Id</th>
+          <th>Student Name</th>
+          <th>Student DOB</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+    <td><p><%= responseData.student.student_id %></p></td>
+    <td><p><%= responseData.student.student_name %></p></td>
+    <td><p><%= responseData.student.date_of_birth %></p></td>
+    <td><p><%= responseData.score %></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </body>
+  </html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/student-result.css">
+  <script>
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+    const token = getCookie('cookie');
+    if(!token){
+        window.location.href='/teacher-login';
+    }
+</script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #b2dfdb;
+      background-size: cover;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .actions a {
+      text-decoration: none;
+      color: #ecf0f1;
+      background-color: #3498db;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .actions a:hover {
+      background-color: #2980b9;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 1rem 0;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+  <title>Actions Page</title>
+</head>
+<body>
+  <header>
+    <h2>Result Management System</h2>
+  </header>
+  <div class="container">
+    <div class="actions">
+      <a href="/">
+        Logout
+      </a>
+      <a href="/teacher/results">
+        View / Edit / Delete Results
+      </a>
+      <a href="/addresult">
+        Add New Result
+      </a>
+    </div>
+  </div>
+  <footer>
+    <h3>This is the Actions Page</h3>
+  </footer>
+</body>
+</html>

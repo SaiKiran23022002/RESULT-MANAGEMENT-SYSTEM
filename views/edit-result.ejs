@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/Editresult.css">
+  <title>Edit Student Result</title>
+  <script>
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+    const token = getCookie('cookie');
+    if(!token){
+        window.location.href='/teacher-login';
+    }
+</script>
+</head>
+<body>
+  <header>
+    <h2>Result Management System</h2>
+  </header>
+  <a class="a" style="display: inline-block;" href="/">Logout</a>
+  <div style="margin-bottom: 30px;">
+    <h2 style="text-align: center;">Edit Student Result</h2>
+  </div>
+  <div style="align-items: center; margin-left: 300px;">
+    <form action="/update/<%= combinedData.result.result_id %>" method="POST">
+    <table>
+    <tr><td>
+    <label for="studentId">Student ID:</label></td>
+    <td>
+    <input type="text" id="studentId" name="studentId" value="<%= combinedData.result.student_id %>" required><br><br></td></tr>    
+    <tr><td>
+    <label for="student_name">Student Name:</label></td>
+    <td><input type="text" id="student_name" name="student_name" value="<%= combinedData.student.student_name %>" required><br><br></td></tr>
+    <tr><td><label for="date_of_birth">Date of Birth (DD-MM-YYYY):</label></td>
+    <td><input type="text" id="date_of_birth" name="date_of_birth" value="<%= combinedData.student.date_of_birth%>" required><br><br></td></tr>
+    <tr><td><label for="score">Score:</label></td>
+    <td><input type="text" id="score" name="score" value="<%= combinedData.result.subject1 %>" required></td></tr>
+    </table>
+  </div>
+  <div style="margin-top: 30px;margin-left: 540px;">
+    <button class="a" style="width: auto;" type="submit">Update</button>
+    <a class="a" href="/teacher/results">Cancel</a>
+  </div>
+</form>
+</body>
+</html>

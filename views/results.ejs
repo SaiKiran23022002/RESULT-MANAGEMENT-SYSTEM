@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/student-result.css">
+  <title>Student Results</title>
+  <script>
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+    const token = getCookie('cookie');
+    if(!token){
+        window.location.href='/teacher-login';
+    }
+</script>
+</head>
+<body>
+  <header>
+    <h2>Result Management System</h2>
+  </header>
+  <a class="a" style="display: inline-block;" href="/">Logout</a>
+  <a class="a" style="display: inline-block;" href="/student-result">Back</a>
+  <a class="a" style="width:auto;display: inline-block;" href="/addresult">Add New Result</a>
+  <div>
+    <h2 style="text-align: center;">Student Results</h2>
+  </div>
+  <div style="margin-bottom: 30px;">
+    <table class="result-card">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Name</th>
+          <th>Date of Birth</th>
+          <th>Result ID</th>
+          <th>Score</th>
+          <th colspan="2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% results.forEach(result => { %>
+          <tr>
+            <td><%= result.student_id %></td>
+            <td><%= result.student_name %></td>
+            <td><%= result.date_of_birth %></td>
+            <td><%= result.result_id %></td>
+            <td><%= result.subject1 %></td>
+            <td>
+              <a class="edit-button"href="/edit/<%= result.result_id %>">Edit</a>
+            </td>
+            <td>
+              <a class="delete-button" href="/delete/<%= result.result_id %>">Delete</a>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

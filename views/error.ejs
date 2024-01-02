@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Error</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .error-container {
+      text-align: center;
+      padding: 20px;
+      border-radius: 4px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      margin-top: 0;
+      color: #d9534f;
+    }
+    p {
+      margin: 10px 0;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <h2>Error: <%= errorMessage %></h2>
+    <p>Please go back and try again.</p>
+    <p><a href="javascript:history.back()">Go Back</a></p>
+  </div>
+</body>
+</html>

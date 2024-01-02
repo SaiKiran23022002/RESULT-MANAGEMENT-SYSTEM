@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/Addresult.css">
+        <title>student-login</title>
+        <script>
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+            const token = getCookie('cookie');
+            if(!token){
+                window.location.href='/teacher-login';
+            }
+        </script>
+      </head>
+<body>
+    <header>
+        Result Management System
+    </header>
+    <div class="back">
+        <a href="/student-result" class="a">Back</a>
+    </div>
+    <div class="login-card">
+        <form action="/teacher/add-result" method="post">
+            <h2>Student Results</h2>
+            <label for="studentId">Student ID:</label>
+            <input type="text" id="studentId" name="studentId"><br><br>
+            <label for="name">Student Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="resultId">Result ID :</label>
+            <input type="text" id="resultId" name="resultId"><br><br>
+            <label for="dateOfBirth">Date of Birth (DD-MM-YYYY):</label>
+            <input type="text" id="dateOfBirth" name="dateOfBirth" required><br><br>
+            <label for="score">Student Score:</label>
+            <input type="text" id="score" name="score"><br><br>
+            <button id="addResultButton" type="submit">Add New Result</button>
+        </form>
+    </div>
+    <br><br><br>
+    <footer>
+        <h5>This is the Add New Result page</h5>
+    </footer>
+    
+</body>
+</html>
