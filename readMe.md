@@ -1,6 +1,6 @@
 # Result Management System
 
-We have to develop a result management systemm using 'nodejs' where a student can login to view his result and a teacher can login and register to manage the results. The teacher can also add, view, edit and delete the results of that particular student.
+I have developed a result management systemm using 'nodejs' where a student can login to view his result and a teacher can login and register to manage the results. The teacher can also add, view, edit and delete the results of that particular student.
 
 ## Dependencies Installed
 
